@@ -1,10 +1,14 @@
 .warnig {
     background-color: #ffeb3b;
-    padding: 5px;
+    padding: 2px;
     text-align: center;
     font-size: 18px;
+    font-size: 15px;
     color: #333;
     margin: auto;
+    z-index: 1000;
+    position: relative;
+    bottom: 40px;
 }
 
 footer{

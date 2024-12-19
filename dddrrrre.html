@@ -6,9 +6,7 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <link rel="stylesheet" href="warning.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="traducion.css">
     
     <title>Document</title>
 </head>
@@ -65,9 +63,6 @@
 
   <!-- Contenido Principal -->
   <div class="main-content">
-
-
-
 
     
    
@@ -149,25 +144,6 @@
 
   </div>
 
- <!-- Botón flotante -->
-  <button class="translate-button" onclick="toggleLanguageOptions()">
-    <i class="fas fa-globe"></i>
-  </button>
-
-  <!-- Contenedor para opciones de idioma -->
-  <div class="language-options" id="language-options">
-    <button onclick="changeLanguage('en')"><i class="fas fa-language"></i> Inglés</button>
-    <button onclick="changeLanguage('fr')"><i class="fas fa-language"></i> Francés</button>
-    <button onclick="changeLanguage('de')"><i class="fas fa-language"></i> Alemán</button>
-    <button onclick="changeLanguage('it')"><i class="fas fa-language"></i> Italiano</button>
-    <button onclick="changeLanguage('pt')"><i class="fas fa-language"></i> Portugués</button>
-    <button onclick="changeLanguage('tr')"><i class="fas fa-language"></i> Turco</button>
-    <button onclick="changeLanguage('es')"><i class="fas fa-language"></i> Español</button>
-
-  </div>
-
-  <!-- Contenedor para Google Translate -->
-  <div id="google_translate_element" style="display: none;"></div>
 <script>
     // Inicializar iconos de Feather
     feather.replace();
@@ -202,44 +178,7 @@
 
 
 
-
 </script>
 
-  <!-- Script de Google Translate -->
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script>
-    // Inicializar Google Translate
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        {
-          pageLanguage: 'es',
-          includedLanguages: 'en,fr,de,it,pt,tr,es', // Idiomas permitidos
-          layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT
-        },
-        'google_translate_element'
-      );
-    }
-
-    // Mostrar/Ocultar las opciones de idioma
-    let areOptionsVisible = false;
-    function toggleLanguageOptions() {
-      const options = document.getElementById('language-options');
-      areOptionsVisible = !areOptionsVisible;
-      options.style.display = areOptionsVisible ? 'flex' : 'none';
-    }
-
-    // Cambiar el idioma usando Google Translate
-    function changeLanguage(language) {
-      const iframe = document.querySelector('.goog-te-combo');
-      if (iframe) {
-        const selectElement = iframe;
-        selectElement.value = language;  // Establece el idioma seleccionado
-        selectElement.dispatchEvent(new Event('change'));  // Dispara el evento para cambiar el idioma
-      }
-
-      // Ocultar las opciones después de seleccionar un idioma
-      document.getElementById('language-options').style.display = 'none';
-    }
-  </script>
 </body>
 </html>
