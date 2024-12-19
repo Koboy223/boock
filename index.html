@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="warning.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+  <!-- Navegación Lateral -->
+  <div id="sideNav">
+    <div class="nav-header">
+        <h2>Nos Acecha</h2>
+    </div>
+    <nav>
+        <a href="#inicio" class="active">
+            <i data-feather="home"></i>
+            <span class="text-pc">Inicio</span>
+        </a>
+        <a href="#historia">
+            <i data-feather="book"></i>
+            <span class="text-pc">Historia</span>
+        </a>
+        <a href="#caracteristicas">
+            <i data-feather="star"></i>
+            <span class="text-pc">Características</span>
+        </a>
+        <a href="#autor">
+            <i data-feather="user"></i>
+            <span class="text-pc">Autor</span>
+        </a>
+        <a href="#contacto">
+            <i data-feather="mail"></i>
+            <span class="text-pc">Contacto</span>
+        </a>
+    </nav>
+  </div>
+
+  <!-- Navegación Inferior -->
+  <div id="bottomNav">
+    <a href="#inicio" class="active">
+        <i data-feather="home"></i>
+        <span class="text-xs">Inicio</span>
+    </a>
+    <a href="#historia">
+        <i data-feather="book"></i>
+        <span class="text-xs">Historia</span>
+    </a>
+    <a href="#caracteristicas">
+        <i data-feather="star"></i>
+        <span class="text-xs">Características</span>
+    </a>
+    <a href="#autor">
+        <i data-feather="user"></i>
+        <span class="text-xs">Autor</span>
+    </a>
+  </div>
+
+  <!-- Contenido Principal -->
+  <div class="main-content">
+
+    <main>
+        <div class="warnig">
+            ⚠️ Este sitio web está en construcción. Puedes encontrar algunos errores o funciones incompletas. ¡Gracias por tu comprensión!
+        </div>
+        
+    </main>
+  
+    <section id="inicio" class="hero">
+        <div class="content">
+            <h1>Nos Acecha</h1>
+            <p>"Cuando el miedo te encuentra, las sombras te reclaman"</p>
+            <button>Leer Adelanto</button>
+        </div>
+    </section>
+    
+    <section id="historia">
+        <div class="container">
+            <h2>La Historia</h2>
+            <img class="baner" src="1734573617645.jpg" alt="baner">
+            <p>Un joven comienza a notar desapariciones misteriosas en su ciudad, mientras el mundo sigue sin darse cuenta. En su búsqueda de respuestas, descubre que algo oscuro y silencioso está detrás, y el tiempo para entender la verdad se está agotando. Cuando el miedo se materializa, nadie está a salvo.</p>
+        </div>
+    </section>
+    
+    <section id="caracteristicas">
+        <div class="container">
+            <h2>Características</h2>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-book icon"></i>
+                    <h3>Thriller Psicológico</h3>
+                    <p>Una historia que desafiará tus percepciones y te hará cuestionar tus miedos más profundos.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-film icon"></i>
+                    <h3>Próximamente</h3>
+                    <p>Una nueva historia en el género del terror, totalmente diferente al resto.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-comments icon"></i>
+                    <h3>Crítica Aclamada</h3>
+                    <p>Una obra maestra del terror psicológico que mantiene al lector en vilo hasta la última página.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <section id="autor">
+        <div class="container" data-aos="fade-up">
+            <h2>El Autor</h2>
+            <div class="author-info">
+                <div class="author-image">
+                    <img src="3590abccec84dac9f1297e311a575950.jpg" alt="Retrato del autor">
+                </div>
+                <div class="author-description">
+                    <p>"Un escritor de 20 años que está dejando su huella en el género del terror con su primera obra, destacándose por su capacidad para crear atmósferas inquietantes."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contacto">
+        <div class="container">
+            <h2>Descubre el Terror</h2>
+            <p>Prepárate para enfrentar tus miedos más profundos</p>
+            <div class="cta-buttons">
+                <button id="preorder-btn">próximamente</button>
+                <button id="trailer-btn">próximamentec:\Users\paulo\Downloads\1734573617645.jpg</button>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Entre las Sombras. Todos los derechos reservados.</p>
+    </footer>
+
+  </div>
+
+<script>
+    // Inicializar iconos de Feather
+    feather.replace();
+
+    
+
+    // Función para agregar la clase 'active' solo al enlace clickeado
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();  // Evitar el comportamiento predeterminado del enlace
+
+            // Remover la clase 'active' de todos los enlaces
+            document.querySelectorAll('a[href^="#"]').forEach(a => a.classList.remove('active'));
+
+            // Agregar la clase 'active' solo al enlace clickeado
+            this.classList.add('active');
+
+            // Opcional: Agregar desplazamiento suave al hacer clic en el enlace
+            const targetId = this.getAttribute('href').substring(1);  // Obtener el id al que apunta el enlace
+            const targetElement = document.getElementById(targetId);  // Obtener el elemento con ese id
+
+            if (targetElement) {
+                // Desplazamiento suave
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>
